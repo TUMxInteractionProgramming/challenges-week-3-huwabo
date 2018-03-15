@@ -9,7 +9,8 @@
 
     <!-- #4 #sweat out the styles by creating an #external css -->
     <link rel="stylesheet" href="css/style.css" />
-
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/script.js"></script>
     
 </head>
 <body>
@@ -23,28 +24,33 @@
 
     <!-- #3 #channels #list is much better, than headlines or paragraphs... -->
     <ul>
-        <li>#Yummy
+        <li id="Yummy" onclick="switchChannel('#Yummy');">#Yummy
             <!-- #3 #channels #favorite this is not starred -->
-            <img src="http://ip.lfe.mw.tum.de/sections/star-o.png" alt="not starred">
+            <img src="http://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="chevron right">
+            <img class="star" src="http://ip.lfe.mw.tum.de/sections/star-o.png" alt="not starred">   
         </li>
-
         <!-- #4 #channel is #highlighted -->
-        <li class="selected">
+        <li id="SevenContinents" class="selected" onclick="switchChannel('#SevenContinents');">
             #SevenContinents
             <!-- #3 #channels #favorite this is starred -->
-            <img src="http://ip.lfe.mw.tum.de/sections/star.png" alt="starred">
+            <img src="http://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="chevron right">
+            <img class="star" src="http://ip.lfe.mw.tum.de/sections/star.png" alt="starred">         
         </li>
-        <li>#KillerApp
+        <li id="KillerApp" onclick="select('#KillerApp');">#KillerApp
             <!-- #3 #channels #favorite this is not starred -->
-            <img src="http://ip.lfe.mw.tum.de/sections/star-o.png" alt="not starred">
+            <img src="http://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="chevron right">
+            <img class="star" src="http://ip.lfe.mw.tum.de/sections/star-o.png" alt="not starred">         
         </li>
-        <li>#FirstPersonOnMars
+        <li id="FirstPersonOnMars" onclick="switchChannel('#FirstPersonOnMars');">#FirstPersonOnMars
             <!-- #3 #channels #favorite this is starred -->
-            <img src="http://ip.lfe.mw.tum.de/sections/star.png" alt="starred">
+            <img src="http://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="chevron right">
+            <img class="star" src="http://ip.lfe.mw.tum.de/sections/star.png" alt="starred">
+           
         </li>
-        <li>#Octoberfest
+        <li id="Octoberfest" onclick="switchChannel('#Octoberfest');">#Octoberfest
             <!-- #3 #channels #favorite this is not starred -->
-            <img src="http://ip.lfe.mw.tum.de/sections/star-o.png" alt="not starred">
+            <img src="http://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="chevron right">
+            <img class="star" src="http://ip.lfe.mw.tum.de/sections/star-o.png" alt="not starred">         
         </li>
     </ul>
 
@@ -52,17 +58,17 @@
     <!-- #4 #sweat #tab-bar -->
     <div id="tab-bar">
         <!-- #4 #tab-bar selected channel should be #highlighted -->
-        <button class="selected">
+        <button id="new" class="selected" onclick="selectTab('#new');">
             <!-- #3 #tab-bar #images -->
             <img src="http://ip.lfe.mw.tum.de/sections/lightbulb-o.png" alt="Bulb">
             New
         </button>
-        <button>
+        <button id="trend" onclick="selectTab('#trend');">
             <!-- #3 #tab-bar #images -->
             <img src="http://ip.lfe.mw.tum.de/sections/fire.png" alt="Hot">
             Trending
         </button>
-        <button>
+        <button id="fav" onclick="selectTab('#fav');">
             <!-- #3 #tab-bar #images -->
             <img src="http://ip.lfe.mw.tum.de/sections/star.png" alt="Star">
             Favorites
@@ -73,10 +79,11 @@
 <!-- #4 #one #page -->
 <div id="chat">
     <h1>
-        #SevenContinents
+        <a id="chat-name">#SevenContinents</a>
         <small>by
-            <strong>cheeses.yard.applies</strong>
+            <strong><a id="chat-location">cheeses.yard.applies</a></strong>
         </small>
+        <img onclick="changeStar();" src="http://ip.lfe.mw.tum.de/sections/star.png" alt="starred">
     </h1>
 
     <!-- #3 #chat #container -->
@@ -100,7 +107,7 @@
     <div class="message">
         <h3>
             <!-- #3 #chat #location points to w3w in a new tab -->
-            <a href="http://w3w.co/truck.cotton.zone" target="_blank">
+            <a id="yu" href="http://w3w.co/truck.cotton.zone" target="_blank">
                 <strong>truck.cotton.zone</strong>
             </a>
             Wed, June 20th, 13:39
@@ -169,6 +176,13 @@
         <p>北京</p>
         <button>+5 min.</button>
     </div>
+    <div id="chat-bar">
+        <button id="emojis-button" onclick="$('#emojis').toggle();">
+            <img src="http://ip.lfe.mw.tum.de/sections/smile-o.png" alt="smile">
+        </button>
+        <div id="emojis">&#x1F601; &#x1F602; &#x1F603; &#x1F604; &#x1F605;</div>
+    </div>
+
 </div>
 
 </body>

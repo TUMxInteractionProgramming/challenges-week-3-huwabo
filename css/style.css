@@ -41,6 +41,7 @@ ul {
     background-color: white;
     /* #3 #channels #bullets removed */
     list-style-type: none;
+    overflow-y: auto;
 }
 
 li {
@@ -51,6 +52,7 @@ li {
     font-size: 16px;
     /* #4 #channel tiles are separated by #lines */
     border-bottom: 1px solid #F5F5F5;
+
 }
 
 /* #4 active #channel is #highlighted */
@@ -61,7 +63,8 @@ li.selected {
 
 li img {
     /* #4 #middle vertical alignment of icons in the #channels list */
-    vertical-align: middle;
+    vertical-align: middle;  
+    float: right;
 }
 
 /* TAB BAR */
@@ -72,6 +75,8 @@ li img {
     background-color: white;
     /* #3 #tab-bar #container has all buttons centered */
     text-align: center;
+    display: flex;
+    align-items: baseline;   
 }
 
 /* #4 add styles to #tab-bar #buttons */
@@ -110,11 +115,14 @@ li img {
 
     /* #4 #message distance to next message container*/
     margin-bottom: 8px;
+    position: relative;
 }
 
 
 .message h3 {
     font-size: medium;
+    display: flex;
+    justify-content: space-between;
 }
 
 .message h3 em {
@@ -136,10 +144,76 @@ li img {
     background-color: #CDDC39;
     color: black;
     text-transform: uppercase;
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
 }
 
 /* #4 left align own #messages using #margins */
 .message.own {
     margin-left: 17.5%;
 }
+
+html, body {
+    height: 100%;
+}
+
+#channels {
+    position: absolute;
+    width: 40%;
+    left: 0%;
+    height: 100%;
+}
+
+#chat {
+    position: absolute;
+    width: 60%;
+    right: 0%;
+    height: 100%;
+   
+}
+
+#channels h1 img {
+    position: absolute;
+    bottom: 0%;
+    left: 10px;
+}
+#chat h1 img {
+    position: absolute;
+    right: 16px;
+    bottom: 25px;
+}
+   
+h1 {
+    position: relative;
+    height: 74px;
+}
+
+#channels h1 {
+    padding-left: 60px;
+}
+
+#chat h1 {
+    padding-left: 20px;
+}
+
+#emojis {
+    background-color: white;
+    border: thin solid black;
+    
+    text-align: left;
+    font-size: 28px;
+    height: 250px;
+    width: 250px;
+    padding: 16px;
+    
+    margin-left: 16px;
+    display: none;   
+}
+  
+#emojis-button {
+    margin-left: 24px;
+    margin-bottom: 8px;
+}
+
 
